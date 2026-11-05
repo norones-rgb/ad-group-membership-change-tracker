@@ -1,0 +1,13 @@
+output/*
+!output/.gitkeep
+*.log
+*.tmp
+*.bak
+*.zip
+.DS_Store
+.vscode/
+.idea/
+# Do not commit real environment snapshots or generated evidence.
+private-data/
+real-data/
+secrets/

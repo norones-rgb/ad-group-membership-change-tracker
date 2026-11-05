@@ -1,0 +1,22 @@
+{
+  "scopeKey": "prod-iam-group-watch",
+  "groups": [
+    {
+      "identity": "Domain Admins",
+      "tier": "Privileged"
+    },
+    {
+      "identity": "Account Operators",
+      "tier": "Privileged"
+    },
+    {
+      "identity": "VPN Remote",
+      "tier": "Sensitive"
+    },
+    {
+      "identity": "Finance Reports",
+      "tier": "Standard"
+    }
+  ],
+  "notes": "Example only. Group tiering is supplied explicitly to CaptureAD; the collector does not automatically classify memberships."
+}

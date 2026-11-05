@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "capturedAtUtc": "2026-11-05T12:00:00Z",
+  "scopeKey": "demo-quarterly-privilege-watch",
+  "source": "synthetic",
+  "requestedGroups": [
+    "Domain Admins",
+    "Helpdesk Operators",
+    "Finance Reports",
+    "VPN Remote",
+    "Legacy App",
+    "MFA Exceptions",
+    "Auditors",
+    "Secret Projects",
+    "App Support"
+  ],
+  "groups": [
+    {
+      "id": "g-da",
+      "name": "Domain Admins",
+      "tier": "Privileged",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-alice",
+          "name": "Alice Admin",
+          "type": "user"
+        },
+        {
+          "id": "u-bob",
+          "name": "Bob Admin",
+          "type": "user"
+        },
+        {
+          "id": "g-tier2",
+          "name": "Tier2 Support",
+          "type": "group"
+        },
+        {
+          "id": "u-mallory",
+          "name": "Mallory New Admin",
+          "type": "user"
+        },
+        {
+          "id": "g-workstations",
+          "name": "Workstation Operators",
+          "type": "group"
+        }
+      ]
+    },
+    {
+      "id": "g-hd",
+      "name": "Helpdesk Operators",
+      "tier": "Sensitive",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-eve",
+          "name": "Eve Helpdesk",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "g-fin",
+      "name": "Finance Reports",
+      "tier": "Standard",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-carla",
+          "name": "Carla Analyst",
+          "type": "user"
+        },
+        {
+          "id": "u-adam",
+          "name": "Adam User",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "g-vpn",
+      "name": "VPN Remote",
+      "tier": "Sensitive",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-sam",
+          "name": "Sam Remote",
+          "type": "user"
+        },
+        {
+          "id": "u-temp",
+          "name": "Temporary Contractor",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "g-legacy",
+      "name": "Legacy App",
+      "tier": "Standard",
+      "complete": true,
+      "collectionError": "",
+      "members": []
+    },
+    {
+      "id": "g-mfa",
+      "name": "MFA Exceptions",
+      "tier": "Privileged",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-frank",
+          "name": "Frank Operator",
+          "type": "user"
+        },
+        {
+          "id": "u-contractor",
+          "name": "External Support",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "g-secret",
+      "name": "Secret Projects",
+      "tier": "Sensitive",
+      "complete": false,
+      "collectionError": "Synthetic enumeration failure; membership changes are not reliable.",
+      "members": []
+    },
+    {
+      "id": "g-app",
+      "name": "App Support",
+      "tier": "Standard",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-rebecca",
+          "name": "Rebecca Admin",
+          "type": "user"
+        }
+      ]
+    }
+  ],
+  "captureErrors": []
+}

@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "capturedAtUtc": "2026-11-01T12:00:00Z",
+  "scopeKey": "demo-quarterly-privilege-watch",
+  "source": "synthetic",
+  "requestedGroups": [
+    "Domain Admins",
+    "Helpdesk Operators",
+    "Finance Reports",
+    "VPN Remote",
+    "Legacy App",
+    "MFA Exceptions",
+    "Auditors",
+    "Secret Projects",
+    "App Support"
+  ],
+  "groups": [
+    {
+      "id": "g-da",
+      "name": "Domain Admins",
+      "tier": "Privileged",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-alice",
+          "name": "Alice Admin",
+          "type": "user"
+        },
+        {
+          "id": "u-bob",
+          "name": "Bob Admin",
+          "type": "user"
+        },
+        {
+          "id": "g-tier2",
+          "name": "Tier2 Support",
+          "type": "group"
+        }
+      ]
+    },
+    {
+      "id": "g-hd",
+      "name": "Helpdesk Operators",
+      "tier": "Sensitive",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-eve",
+          "name": "Eve Helpdesk",
+          "type": "user"
+        },
+        {
+          "id": "u-adam",
+          "name": "Adam User",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "g-fin",
+      "name": "Finance Reports",
+      "tier": "Standard",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-carla",
+          "name": "Carla Analyst",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "g-vpn",
+      "name": "VPN Remote",
+      "tier": "Sensitive",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-sam",
+          "name": "Sam Remote",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "g-legacy",
+      "name": "Legacy App",
+      "tier": "Standard",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-leo",
+          "name": "Leo Legacy",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "g-mfa",
+      "name": "MFA Exceptions",
+      "tier": "Privileged",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-frank",
+          "name": "Frank Operator",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "g-audit",
+      "name": "Auditors",
+      "tier": "Standard",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-aud1",
+          "name": "Auditor One",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "g-secret",
+      "name": "Secret Projects",
+      "tier": "Sensitive",
+      "complete": true,
+      "collectionError": "",
+      "members": [
+        {
+          "id": "u-pat",
+          "name": "Pat Project",
+          "type": "user"
+        }
+      ]
+    }
+  ],
+  "captureErrors": []
+}

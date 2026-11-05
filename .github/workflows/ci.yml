@@ -1,0 +1,32 @@
+name: PowerShell group membership tracker CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  pester:
+    name: Pester on ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Pester
+        shell: pwsh
+        run: |
+          Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+          Install-Module Pester -MinimumVersion 5.6.1 -Force -Scope CurrentUser -ErrorAction Stop
+      - name: Execute Pester tests
+        shell: pwsh
+        run: |
+          Import-Module Pester -MinimumVersion 5.6.1
+          Invoke-Pester -Path ./tests -CI -Output Detailed
+      - name: Run synthetic demonstration
+        shell: pwsh
+        run: |
+          ./Invoke-GroupMembershipTracker.ps1 -Action Demo -OutputDirectory "$PWD/output"
+          if (-not (Test-Path "$PWD/output/group-membership-report.html")) { throw 'HTML report missing.' }

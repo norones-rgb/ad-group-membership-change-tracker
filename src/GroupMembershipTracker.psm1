@@ -25,7 +25,25 @@ function Assert-GmtSnapshot {
     foreach ($field in @('capturedAtUtc', 'scopeKey', 'source')) {
         Assert-GmtText (Get-GmtProperty $Snapshot $field) $field
     }
-    $stamp = [string](Get-GmtProperty $Snapshot 'capturedAtUtc')
+    # ConvertFrom-Json may materialize ISO-8601 strings as DateTime on newer
+    # PowerShell versions. Keep the strict UTC contract for textual inputs.
+    $captureValue = Get-GmtProperty $Snapshot 'capturedAtUtc'
+    if ($captureValue -is [datetime]) {
+        if ($captureValue.Kind -eq [DateTimeKind]::Unspecified) {
+            throw 'capturedAtUtc must have an explicit UTC timezone.'
+        }
+        $stamp = $captureValue.ToUniversalTime().ToString(
+            "yyyy-MM-ddTHH:mm:ss'Z'", [Globalization.CultureInfo]::InvariantCulture)
+        $Snapshot.PSObject.Properties['capturedAtUtc'].Value = $stamp
+    }
+    elseif ($captureValue -is [datetimeoffset]) {
+        $stamp = $captureValue.UtcDateTime.ToString(
+            "yyyy-MM-ddTHH:mm:ss'Z'", [Globalization.CultureInfo]::InvariantCulture)
+        $Snapshot.PSObject.Properties['capturedAtUtc'].Value = $stamp
+    }
+    else {
+        $stamp = [string]$captureValue
+    }
     if ($stamp -cnotmatch '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$') {
         throw 'capturedAtUtc must use yyyy-MM-ddTHH:mm:ssZ (UTC).'
     }

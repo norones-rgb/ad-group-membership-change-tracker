@@ -1,5 +1,12 @@
 # AD Group Membership Change Tracker
 
+> **IAM Automation Toolkit · Project 3/5** | Read-only PowerShell evaluation MVP · Synthetic-first design
+>
+> [**Portfolio directory**](https://github.com/norones-rgb/ad-ldap-exception-risk-analyzer/blob/main/IAM-AUTOMATION-PORTFOLIO.md) · [**Run the demo**](DEMO.md) · [**Sample HTML preview**](docs/fixture-preview.html) · [**Windows/Linux CI**](https://github.com/norones-rgb/ad-group-membership-change-tracker/actions/workflows/ci.yml)
+>
+> [![Pester CI](https://github.com/norones-rgb/ad-group-membership-change-tracker/actions/workflows/ci.yml/badge.svg)](https://github.com/norones-rgb/ad-group-membership-change-tracker/actions/workflows/ci.yml) · PowerShell 7.2+ · CSV / JSON / offline HTML output
+
+
 **PowerShell 7.2+ · Read-only Active Directory collection · Synthetic demo · CSV/JSON/HTML audit reporting**
 
 A focused, read-only tool for recording direct Active Directory group memberships at two points in time and generating a reviewable record of membership additions, removals, privileged-group changes, and evidence gaps. Built for IAM operations, access governance, and consulting demonstrations.
